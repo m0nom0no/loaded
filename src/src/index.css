@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #0b0f19;
+    --card-dark: #131b2e;
+    --card-hover: #1c2742;
+    --accent-neon: #10b981;
+    --accent-cyan: #06b6d4;
+    --accent-warning: #f59e0b;
+    --accent-danger: #ef4444;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #f3f4f6;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(19, 27, 46, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Big Timer Warning pulse animation */
+@keyframes warningPulse {
+  0%, 100% {
+    background-color: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.8);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    background-color: rgba(245, 158, 11, 0.25);
+    border-color: rgba(245, 158, 11, 0.9);
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
+  }
+}
+
+.timer-warning-pulse {
+  animation: warningPulse 1.2s infinite ease-in-out;
+}
+
+/* High contrast touch buttons active state */
+.active-press:active {
+  transform: scale(0.94);
+}
